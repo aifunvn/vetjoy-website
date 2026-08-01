@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/*
+ * VETJOY Design Tokens
+ * Palette: Vet Green (primary/trust), Teal (accent/tech), White, Neutral Gray.
+ * Change values here to re-skin the whole site — no hard-coded colors in components.
+ */
+:root {
+  --color-brand-green-50: #eef6f2;
+  --color-brand-green-100: #d7ebe0;
+  --color-brand-green-200: #b0d7c1;
+  --color-brand-green-300: #80bd9e;
+  --color-brand-green-400: #4d9c78;
+  --color-brand-green-500: #2c7d5b;
+  --color-brand-green-600: #1e6849;
+  --color-brand-green-700: #17523a;
+  --color-brand-green-800: #123f2d;
+  --color-brand-green-900: #0d2f22;
+
+  --color-brand-teal-50: #e9f7f6;
+  --color-brand-teal-100: #cbeae7;
+  --color-brand-teal-200: #98d6d0;
+  --color-brand-teal-300: #62bdb5;
+  --color-brand-teal-400: #35a099;
+  --color-brand-teal-500: #1f847d;
+  --color-brand-teal-600: #17685f;
+  --color-brand-teal-700: #14544e;
+
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f8f8;
+  --color-neutral-100: #eef0ef;
+  --color-neutral-200: #dde1df;
+  --color-neutral-300: #c2c9c5;
+  --color-neutral-400: #97a19b;
+  --color-neutral-500: #6f7a73;
+  --color-neutral-600: #545e58;
+  --color-neutral-700: #3d453f;
+  --color-neutral-800: #262b27;
+  --color-neutral-900: #161917;
+
+  --color-accent-amber-100: #fdf0d5;
+  --color-accent-amber-500: #d68a1c;
+  --color-accent-amber-700: #8a5a10;
+
+  --color-danger-50: #fdecec;
+  --color-danger-500: #d1453d;
+  --color-danger-700: #922e28;
+
+  --color-success-50: #eaf6ee;
+  --color-success-500: #2c8a4b;
+  --color-success-700: #1d5c32;
+
+  --background: var(--color-neutral-0);
+  --foreground: var(--color-neutral-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-brand-green-50: var(--color-brand-green-50);
+  --color-brand-green-100: var(--color-brand-green-100);
+  --color-brand-green-200: var(--color-brand-green-200);
+  --color-brand-green-300: var(--color-brand-green-300);
+  --color-brand-green-400: var(--color-brand-green-400);
+  --color-brand-green-500: var(--color-brand-green-500);
+  --color-brand-green-600: var(--color-brand-green-600);
+  --color-brand-green-700: var(--color-brand-green-700);
+  --color-brand-green-800: var(--color-brand-green-800);
+  --color-brand-green-900: var(--color-brand-green-900);
+
+  --color-brand-teal-50: var(--color-brand-teal-50);
+  --color-brand-teal-100: var(--color-brand-teal-100);
+  --color-brand-teal-200: var(--color-brand-teal-200);
+  --color-brand-teal-300: var(--color-brand-teal-300);
+  --color-brand-teal-400: var(--color-brand-teal-400);
+  --color-brand-teal-500: var(--color-brand-teal-500);
+  --color-brand-teal-600: var(--color-brand-teal-600);
+  --color-brand-teal-700: var(--color-brand-teal-700);
+
+  --color-neutral-0: var(--color-neutral-0);
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+
+  --color-accent-amber-100: var(--color-accent-amber-100);
+  --color-accent-amber-500: var(--color-accent-amber-500);
+  --color-accent-amber-700: var(--color-accent-amber-700);
+
+  --color-danger-50: var(--color-danger-50);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-700: var(--color-danger-700);
+
+  --color-success-50: var(--color-success-50);
+  --color-success-500: var(--color-success-500);
+  --color-success-700: var(--color-success-700);
+
+  --font-sans: var(--font-be-vietnam);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-brand-teal-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .container-vj {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-vj {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-vj {
+      padding-inline: 2rem;
+    }
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-brand-green-700);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 0.5rem 0;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media (min-width: 640px) {
+    .section-py {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .section-py {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  .card-vj {
+    background: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 1rem;
+    box-shadow: 0 1px 2px rgba(13, 47, 34, 0.04);
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+  .card-vj-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -12px rgba(13, 47, 34, 0.18);
+  }
+
+  .icon-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fade-up 500ms ease both;
+  }
+}
